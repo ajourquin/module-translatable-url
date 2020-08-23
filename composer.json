@@ -1,0 +1,34 @@
+{
+    "name": "ajourquin/module-translatable-url",
+    "description": "Translate routes frontname",
+    "version": "1.0.0",
+    "type": "magento2-module",
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "name": "Aurélien Jourquin",
+            "email": "aurelien@growzup.com"
+        }
+    ],
+    "homepage": "https://github.com/ajourquin/module-translatable-url",
+    "keywords": [
+        "magento",
+        "magento2",
+        "routes",
+        "translation",
+        "url"
+    ],
+    "require": {
+        "magento/module-translation": "*",
+        "magento/module-store": "*",
+        "magento/module-theme": "*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Ajourquin\\TranslatableUrl\\": ""
+        }
+    }
+}

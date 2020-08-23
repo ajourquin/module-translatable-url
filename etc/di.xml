@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author    Aurélien Jourquin <aurelien@growzup.com>
+ * @link      http://www.ajourquin.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Store\Model\StoreSwitcher">
+        <arguments>
+            <argument name="storeSwitchers" xsi:type="array">
+                <item name="urlTranslate" xsi:type="object">Ajourquin\TranslatableUrl\Model\Switcher</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\Url\RouteParamsPreprocessorComposite">
+        <arguments>
+            <argument name="routeParamsPreprocessors" xsi:type="array">
+                <item name="urlTranslate" xsi:type="object">Ajourquin\TranslatableUrl\Model\RouteParamsPreprocessor</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

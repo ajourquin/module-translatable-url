@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author    Aurélien Jourquin <aurelien@growzup.com>
+ * @link      http://www.ajourquin.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Ajourquin\TranslatableUrl\Model\TranslatableUrlResolverInterface" type="Ajourquin\TranslatableUrl\Model\TranslatableUrlResolver"/>
+    <preference for="Magento\Framework\App\Router\Base" type="Ajourquin\TranslatableUrl\Preference\Framework\App\Router\Base"/>
+
+    <type name="Magento\Framework\Url\ModifierInterface">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="urlTranslate" xsi:type="object">Ajourquin\TranslatableUrl\Model\Url\UrlModifier</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Customer\CustomerData\SectionConfigConverter">
+        <plugin name="ajourquin_sections_translation" type="Ajourquin\TranslatableUrl\Plugin\Customer\CustomerData\SectionConfigConverter" />
+    </type>
+
+    <type name="Magento\Framework\Url">
+        <plugin name="ajourquin_remove_notranslate_param" type="Ajourquin\TranslatableUrl\Plugin\Framework\Url" />
+    </type>
+</config>
