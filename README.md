@@ -47,7 +47,7 @@ create,creer
 If you dont want to translate an url, you can add the parameter '**_notranslate**' to true when building url. The same way as adding '<strong>_scope</strong>' or '<strong>_secure</strong>' params
 
 ```
-this->getUrl('customer/account/login', ['no_translate' => true]);
+this->getUrl('customer/account/login', ['_notranslate' => true]);
 ```
 
 # How it works
